@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  QiWi
+//
+//  Created by stevie on 2019/3/8.
+//  Copyright © 2019 IQQL. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef DEBUG
+
+#define NSLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+//干掉log
+#define NSLog(...) {}
+//干掉断言
+
+#ifndef NS_BLOCK_ASSERTIONS
+#define NS_BLOCK_ASSERTIONS
+#endif
+
+#define _NSAssertBody
+
+#endif
+#import <UIKit/UIKit.h>
+#import "QLDefine.h"
+#import "QiWi-Swift.h"
+#import "HLPush.h"
+#import "HLColor.h"
+//safe
+#import "NSMutableArray+safe.h"
+#import "UITextField+HLValidator.h"
+
+#import "HLColor.h"
+#import "CRToast.h"
+
+#import <BlocksKit/BlocksKit+UIKit.h>
+#import "MTKObserving.h"
+#import "HLGlobalValue.h"
+
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,6 @@
+framework module AFNetworking_RetryPolicy {
+  umbrella header "AFNetworking+RetryPolicy-umbrella.h"
+
+  export *
+  module * { export * }
+}
