@@ -122,6 +122,7 @@
 		182407CD2232732000DF7289 /* DistanceMatrixVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 182407C72232731F00DF7289 /* DistanceMatrixVO.m */; };
 		182407CE2232732000DF7289 /* DistanceElementVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 182407CB2232731F00DF7289 /* DistanceElementVO.m */; };
 		182407D2223274C900DF7289 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182407D1223274C900DF7289 /* HomeVC.swift */; };
+		1829105E223CD34C00A72333 /* QWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829105D223CD34C00A72333 /* QWNetwork.swift */; };
 		8A0CC7DCFB1B9C61207CD122 /* Pods_QiWi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6FEEE7562E940478A8F536 /* Pods_QiWi.framework */; };
 /* End PBXBuildFile section */
 
@@ -308,6 +309,7 @@
 		182407CA2232731F00DF7289 /* DistanceMatrixVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceMatrixVO.h; sourceTree = "<group>"; };
 		182407CB2232731F00DF7289 /* DistanceElementVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceElementVO.m; sourceTree = "<group>"; };
 		182407D1223274C900DF7289 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1829105D223CD34C00A72333 /* QWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QWNetwork.swift; sourceTree = "<group>"; };
 		2874093D71853EDB68854DE4 /* Pods-QiWi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiWi.release.xcconfig"; path = "Pods/Target Support Files/Pods-QiWi/Pods-QiWi.release.xcconfig"; sourceTree = "<group>"; };
 		38350F7E7FE3528192AE2826 /* Pods-QiWi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiWi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiWi/Pods-QiWi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,17 +490,17 @@
 		182406CE22325C9B00DF7289 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				182406CF22325C9B00DF7289 /* HLOperationManager.m */,
-				182406D022325C9B00DF7289 /* HLNetworkManager.m */,
-				182406D122325C9B00DF7289 /* HLHttpConfig.h */,
-				182406D222325C9B00DF7289 /* HLBaseOperationParam.h */,
 				182406D322325C9B00DF7289 /* NetAPI */,
 				182406D622325C9B00DF7289 /* APIConfig */,
-				182406D822325C9B00DF7289 /* URLConfig.swift */,
+				182406CF22325C9B00DF7289 /* HLOperationManager.m */,
 				182406D922325C9B00DF7289 /* HLOperationManager.h */,
-				182406DA22325C9B00DF7289 /* HLBaseOperationParam.m */,
-				182406DB22325C9B00DF7289 /* HLHttpConfig.m */,
+				182406D022325C9B00DF7289 /* HLNetworkManager.m */,
 				182406DC22325C9B00DF7289 /* HLNetworkManager.h */,
+				182406D122325C9B00DF7289 /* HLHttpConfig.h */,
+				182406D222325C9B00DF7289 /* HLBaseOperationParam.h */,
+				182406DA22325C9B00DF7289 /* HLBaseOperationParam.m */,
+				182406D822325C9B00DF7289 /* URLConfig.swift */,
+				182406DB22325C9B00DF7289 /* HLHttpConfig.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -508,6 +510,7 @@
 			children = (
 				182406D422325C9B00DF7289 /* HLNetApi.m */,
 				182406D522325C9B00DF7289 /* HLNetApi.h */,
+				1829105D223CD34C00A72333 /* QWNetwork.swift */,
 			);
 			path = NetAPI;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-QiWi/Pods-QiWi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking+RetryPolicy/AFNetworking_RetryPolicy.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Block-KVO/Block_KVO.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CRToast/CRToast.framework",
@@ -969,9 +973,12 @@
 				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
 				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/NKVPhonePicker/NKVPhonePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcAssociatedObjectHelpers/ObjcAssociatedObjectHelpers.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
@@ -983,6 +990,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking_RetryPolicy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Block_KVO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRToast.framework",
@@ -997,9 +1005,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NKVPhonePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcAssociatedObjectHelpers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
@@ -1083,6 +1094,7 @@
 				1824078522325C9B00DF7289 /* MapMarker.swift in Sources */,
 				1824078D22325C9B00DF7289 /* MapDataManger.swift in Sources */,
 				1824076422325C9B00DF7289 /* UILabel+HL.swift in Sources */,
+				1829105E223CD34C00A72333 /* QWNetwork.swift in Sources */,
 				182407AA22325C9B00DF7289 /* KeychainItemWrapper.m in Sources */,
 				1824076D22325C9B00DF7289 /* Float+degrees.swift in Sources */,
 				1824077822325C9B00DF7289 /* HLWeakObjectDeathNotifier.m in Sources */,

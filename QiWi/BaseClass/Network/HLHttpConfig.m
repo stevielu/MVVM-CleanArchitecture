@@ -17,7 +17,7 @@ DEF_SINGLETON(HLHttpConfig)
 - (instancetype)init
 {
     self = [super init];
-    _beta = getenv("HL_BETA") != nil;
+    _beta = getenv("QIWI") != nil;
     _AppVersion = @"v3";
     
     _System = @"iphone";
@@ -29,7 +29,7 @@ DEF_SINGLETON(HLHttpConfig)
     ({
         NSString *appid = [HLKeychain getKeychainValueForType:@"hashkey"];
         if (!appid) {
-            appid = @"huali-ios-hashkey";//[UIDevice currentDevice].identifierForVendor.UUIDString;
+            appid = @"qiwi-ios-hashkey";
             [HLKeychain setKeychainValue:appid forType:@"hashkey"];
         }
         appid;
@@ -46,7 +46,7 @@ DEF_SINGLETON(HLHttpConfig)
     [requestSerializer setValue:_AppVersion forHTTPHeaderField:@"AppVersion"];
     [requestSerializer setValue:_System forHTTPHeaderField:@"System"];
     [requestSerializer setValue:_Version forHTTPHeaderField:@"Version"];
-    [requestSerializer setValue:_BuildVersion forHTTPHeaderField:@"BuildVersion"];//_BuildVersion
+    [requestSerializer setValue:_BuildVersion forHTTPHeaderField:@"BuildVersion"];
     [requestSerializer setValue:[HLGlobalValue sharedInstance].token forHTTPHeaderField:@"authorization"];
 }
 @end

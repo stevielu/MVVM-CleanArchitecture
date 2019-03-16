@@ -18,10 +18,10 @@
 @property (nonatomic, strong, readonly, nullable) NSString *AppVersion;//接口版本号 v1
 @property (nonatomic, strong, readonly, nullable) NSString *System;//iphone
 @property (nonatomic, strong, readonly, nullable) NSString *Version;//iOS系统版本号 9.3
-@property (nonatomic, strong, readonly, nullable) NSString *AppID;//请求标识符 lkasdjlf-ajsdfjlasd-ajdslfkj-jadlfj
-@property (nonatomic, strong, readonly, nullable) NSString *BuildVersion;//app编译版本号20150806131313
+@property (nonatomic, strong, readonly, nullable) NSString *AppID;//请求标识符
+@property (nonatomic, strong, readonly, nullable) NSString *BuildVersion;//app编译版本号
 @property (nonatomic, strong, readonly, nullable) NSString *Token;//toekn
-//@property (nonatomic, strong, readonly, nullable) NSString *AppName;//app编译版本号20150806131313
+//@property (nonatomic, strong, readonly, nullable) NSString *AppName;//app名称
 //@property (nonatomic, strong, readonly, nullable) NSString *Country;//用户所在地
 
 - (void)configHeader:(AFHTTPRequestSerializer * __nonnull)requestSerializer;

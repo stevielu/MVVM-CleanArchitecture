@@ -15,7 +15,9 @@ end
 target 'QiWi' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-
+  #Architecture
+  pod 'RxSwift',    '~> 3.0'
+  pod 'RxCocoa',    '~> 3.0'
   #loading animation
   pod 'MBProgressHUD'                                                           #MIT
 
@@ -29,7 +31,7 @@ target 'QiWi' do
   pod 'AFNetworking'                                                            #MIT
   pod 'AFNetworking+RetryPolicy'
   pod 'SDWebImage'                                                              #MIT
-
+  pod 'Moya/RxSwift', '~> 8.0.5'
   #autolayout
   pod 'Masonry'                                                                 #MIT
 
@@ -68,5 +70,5 @@ target 'QiWi' do
   pod 'Cosmos', '~> 16.0'                                                       #MIT
   
   #register
-  pod 'NKVPhonePicker'
+
 end
