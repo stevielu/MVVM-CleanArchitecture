@@ -28,7 +28,7 @@ extension responseObject{
     }
 }
 
-class HLBaseLogic: NSObject {
+open class HLBaseLogic: NSObject {
     let operationManagerObj:HLOperationManager
     var failedRequest:HLBaseOperationParam?
     
