@@ -123,6 +123,8 @@
 		182407CE2232732000DF7289 /* DistanceElementVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 182407CB2232731F00DF7289 /* DistanceElementVO.m */; };
 		182407D2223274C900DF7289 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182407D1223274C900DF7289 /* HomeVC.swift */; };
 		1829105E223CD34C00A72333 /* QWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829105D223CD34C00A72333 /* QWNetwork.swift */; };
+		18EB5D77223F78B300208E3F /* RxAFNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5D76223F78B300208E3F /* RxAFNetworkProvider.swift */; };
+		18EB5D79223F7D5E00208E3F /* AFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5D78223F7D5E00208E3F /* AFResponse.swift */; };
 		8A0CC7DCFB1B9C61207CD122 /* Pods_QiWi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6FEEE7562E940478A8F536 /* Pods_QiWi.framework */; };
 /* End PBXBuildFile section */
 
@@ -310,6 +312,8 @@
 		182407CB2232731F00DF7289 /* DistanceElementVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceElementVO.m; sourceTree = "<group>"; };
 		182407D1223274C900DF7289 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1829105D223CD34C00A72333 /* QWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QWNetwork.swift; sourceTree = "<group>"; };
+		18EB5D76223F78B300208E3F /* RxAFNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAFNetworkProvider.swift; sourceTree = "<group>"; };
+		18EB5D78223F7D5E00208E3F /* AFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFResponse.swift; sourceTree = "<group>"; };
 		2874093D71853EDB68854DE4 /* Pods-QiWi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiWi.release.xcconfig"; path = "Pods/Target Support Files/Pods-QiWi/Pods-QiWi.release.xcconfig"; sourceTree = "<group>"; };
 		38350F7E7FE3528192AE2826 /* Pods-QiWi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiWi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiWi/Pods-QiWi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -490,6 +494,7 @@
 		182406CE22325C9B00DF7289 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				18EB5D75223F788D00208E3F /* RXNetwork */,
 				182406D322325C9B00DF7289 /* NetAPI */,
 				182406D622325C9B00DF7289 /* APIConfig */,
 				182406CF22325C9B00DF7289 /* HLOperationManager.m */,
@@ -501,6 +506,7 @@
 				182406DA22325C9B00DF7289 /* HLBaseOperationParam.m */,
 				182406D822325C9B00DF7289 /* URLConfig.swift */,
 				182406DB22325C9B00DF7289 /* HLHttpConfig.m */,
+				18EB5D78223F7D5E00208E3F /* AFResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -799,6 +805,14 @@
 				182407C72232731F00DF7289 /* DistanceMatrixVO.m */,
 			);
 			path = GMSModel;
+			sourceTree = "<group>";
+		};
+		18EB5D75223F788D00208E3F /* RXNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				18EB5D76223F78B300208E3F /* RxAFNetworkProvider.swift */,
+			);
+			path = RXNetwork;
 			sourceTree = "<group>";
 		};
 		C45DB05697D06C8825DA48EF /* Pods */ = {
@@ -1144,6 +1158,7 @@
 				1824076522325C9B00DF7289 /* Loading.swift in Sources */,
 				1824078222325C9B00DF7289 /* MapApiMaker.swift in Sources */,
 				1824079322325C9B00DF7289 /* NSObject+category.m in Sources */,
+				18EB5D79223F7D5E00208E3F /* AFResponse.swift in Sources */,
 				182407B122325C9B00DF7289 /* HLTBC.swift in Sources */,
 				1824076122325C9B00DF7289 /* UIApplication+HL.swift in Sources */,
 				1824079B22325C9B00DF7289 /* HLBaseLogic.swift in Sources */,
@@ -1166,6 +1181,7 @@
 				182407AD22325C9B00DF7289 /* HLValueObject.m in Sources */,
 				1824075B22325C9B00DF7289 /* NSDate+Utilities.m in Sources */,
 				18240677223259AB00DF7289 /* AppDelegate.m in Sources */,
+				18EB5D77223F78B300208E3F /* RxAFNetworkProvider.swift in Sources */,
 				182407AB22325C9B00DF7289 /* HLKeychian.m in Sources */,
 				1824078B22325C9B00DF7289 /* PolyLineStyle.swift in Sources */,
 				1824075A22325C9B00DF7289 /* PaddingUILabel.swift in Sources */,
