@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, HLRequestType)  {
     HLRequestTypeDelete,                     //delete方式
 };
 
-typedef void(^HLCompletionBlock)(_Nullable id aResponseObject, NSError* _Nullable anError);
+typedef void(^HLCompletionBlock)(_Nullable id aResponseObject, NSError* _Nullable anError, NSURLResponse* _Nullable urlResponse);
 typedef void(^NSNetResponseBlock)(NSURLResponse * _Nullable fullResponse,NSError* _Nullable anError);
 typedef void(^HLDataBlock)(_Nonnull id data, NSNumber* _Nonnull code ,NSString* _Nonnull message);
 
@@ -27,7 +27,6 @@ typedef void(^HLDataBlock)(_Nonnull id data, NSNumber* _Nonnull code ,NSString* 
 @property (nonatomic, assign) HLRequestType requestType;                    //请求类型，post还是get方式，默认为post方式
 @property (nonatomic, strong, nonnull) NSDictionary *requestParam;          //参数
 @property (nonatomic, copy, nullable) HLCompletionBlock callbackBlock;      //回调block
-@property (nonatomic, copy, nullable) AFResponse *response;      //回调block
 
 @property (nonatomic, assign) NSTimeInterval timeoutTime;                   //超时时间，默认为10秒
 @property (nonatomic, assign) int retryTimes;                                       //重试次数

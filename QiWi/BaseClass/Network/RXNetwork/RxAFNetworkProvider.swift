@@ -17,7 +17,7 @@ class RxAFNetworkProvider:HLBaseLogic{
     
     func rxRequest(url:String,reqParams:NSDictionary) -> Observable<AFResponse>{
         return Observable.create{ observer in
-            let params = self.requestWithUrl(url: url, reqParams: reqParams, completeBlock: { (data, anError) in
+            let params = self.requestWithUrl(url: url, reqParams: reqParams, completeBlock: { (data, anError, urlRes) in
                 if let error = anError as NSError? {
                     observer.onError(error)
                 }else{

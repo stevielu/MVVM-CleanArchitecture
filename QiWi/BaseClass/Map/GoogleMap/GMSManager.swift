@@ -157,7 +157,7 @@ class GMSObjectManager: NSObject,MapApi {
         let reqUrl = NSString(format: "https://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&waypoints=%@&mode=%@&key=%@", origin,destination,wayPoint,mode,gmsAppKey)
         
         
-        self.logic.getRouteWithGMUrl(reqUrl as String) { (aResponseObject, anError) in
+        self.logic.getRouteWithGMUrl(reqUrl as String) { (aResponseObject, anError, urlRes) in
             if(anError != nil){
                 NSLog("Unable to get polyline")
             }
@@ -183,7 +183,7 @@ class GMSObjectManager: NSObject,MapApi {
     func getMatrixDistance(destinationPosition: NSString, origin wayPoint: NSString, withMap map: AnyObject, completeionHandle block:@escaping MapCompletionBlock) {
         let reqUrl = String(format: "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=%@&destinations=%@&mode=walking&key=%@", wayPoint,destinationPosition,gmsAppKey)
         
-        self.logic .getDistanceWithGMUrl(reqUrl) { (aResponseObject, anError) in
+        self.logic .getDistanceWithGMUrl(reqUrl) { (aResponseObject, anError, urlRes) in
             if(aResponseObject != nil){
                 if let distanceVO = aResponseObject as? GMSDistanceVO{
                     //sort

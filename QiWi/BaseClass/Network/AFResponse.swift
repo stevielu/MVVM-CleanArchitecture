@@ -12,7 +12,7 @@ public final class AFResponse{
     public let data: Data
     public let request: URLRequest?
     public let response: URLResponse?
-    public let block:
+
     
     /// Initialize a new `Response`.
     public init(statusCode: Int, data: Data, request: URLRequest? = nil, response: URLResponse? = nil) {

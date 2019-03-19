@@ -16,7 +16,7 @@ class PushNotificationLogic: HLBaseLogic{
         reqParams["phone"] = HLGlobalValue.sharedInstance().phone as AnyObject
         reqParams["deviceToken"] = HLGlobalValue.sharedInstance().deviceToken as AnyObject
         
-        let param = HLNetApi.getWithUrl(url, params: reqParams) { (aResponseObject, anError) in
+        let param = HLNetApi.getWithUrl(url, params: reqParams) { (aResponseObject, anError, urlRes) in
             
         }
         

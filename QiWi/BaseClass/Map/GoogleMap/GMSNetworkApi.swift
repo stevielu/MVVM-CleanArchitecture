@@ -10,13 +10,13 @@ import Foundation
 class GMSLogic: HLBaseLogic{
     func getRouteWithGMUrl(_ url: String?,completeBlock: @escaping HLCompletionBlock) {
         let data = NSDictionary()
-        let param = self.requestWithFullUrl(url: url ?? "", reqParams: data) { (aResponseObject, anError) in
+        let param = self.requestWithFullUrl(url: url ?? "", reqParams: data) { (aResponseObject, anError, urlRes) in
             if(anError == nil){
                 let vo = aResponseObject as? NSDictionary
                 let route = vo!["routes"] as? NSArray
-                completeBlock(route,nil)
+                completeBlock(route,nil, urlRes)
             }else{
-                completeBlock(nil,anError)
+                completeBlock(nil,anError, urlRes)
             }
         }
         self.operationManagerObj.request(with: param)
@@ -24,13 +24,13 @@ class GMSLogic: HLBaseLogic{
     
     func getDistanceWithGMUrl(_ url: String?,completeBlock: @escaping HLCompletionBlock) {
         
-        let param = HLNetApi.getWithUrl(url) { (aResponseObject, anError) in
+        let param = HLNetApi.getWithUrl(url) { (aResponseObject, anError, urlRes) in
             if(anError == nil){
                 let vo = aResponseObject as? [String:Any]
                 let distances = GMSDistanceVO.vo(withDict: vo)
-                completeBlock(distances,nil)
+                completeBlock(distances,nil, urlRes)
             }else{
-                completeBlock(nil,anError)
+                completeBlock(nil,anError, urlRes)
             }
         }
         self.operationManagerObj.request(with: param)

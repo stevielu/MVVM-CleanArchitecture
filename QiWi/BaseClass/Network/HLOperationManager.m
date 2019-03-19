@@ -167,7 +167,7 @@
                 [self handlePostErrorWithResponse:response error:error];
 
                 if (aParam.callbackBlock) {
-                    aParam.callbackBlock(nil, error);
+                    aParam.callbackBlock(nil, error, response);
                 }
             }
             else {
@@ -182,7 +182,7 @@
                     }
                 }
                 if (aParam.callbackBlock) {
-                    aParam.callbackBlock(responseObject, nil);
+                    aParam.callbackBlock(responseObject, nil, response);
                 }
             }
         }];
@@ -202,7 +202,7 @@
         [self handlePostErrorWithTask:task error:error];
         
         if (aParam.callbackBlock) {
-            aParam.callbackBlock(nil, error);
+            aParam.callbackBlock(nil, error, nil);
         }
     }];
     

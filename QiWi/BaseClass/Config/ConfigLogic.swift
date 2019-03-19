@@ -12,7 +12,7 @@ class ConfigLogic: HLBaseLogic{
         let reqParams = [String: AnyObject]()
         
         
-        let param = HLNetApi.getWithUrl(url, params: reqParams) { (aResponseObject, anError) in
+        let param = HLNetApi.getWithUrl(url, params: reqParams) { (aResponseObject, anError, urlRes) in
             if(anError == nil){
             }
         }

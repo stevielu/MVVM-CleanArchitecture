@@ -81,14 +81,14 @@ open class HLBaseLogic: NSObject {
             userData = reqParams as? [AnyHashable: Any]
         }
         
-        let param = HLNetApi.getWithUrl(url, params: userData) { (aResponseObject, anError) -> Void in
+        let param = HLNetApi.getWithUrl(url, params: userData) { (aResponseObject, anError, urlRes) -> Void in
             if let error = anError as NSError? {
                 self.errorHandle(error)
-                completeBlock?(nil, error)
+                completeBlock?(nil, error, urlRes)
                 return
             }
             
-            completeBlock?(aResponseObject, nil)
+            completeBlock?(aResponseObject, nil, urlRes)
         }
         
         self.failedRequest = param
