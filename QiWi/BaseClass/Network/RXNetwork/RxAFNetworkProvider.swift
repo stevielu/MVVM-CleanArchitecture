@@ -21,7 +21,13 @@ class RxAFNetworkProvider:HLBaseLogic{
                 if let error = anError as NSError? {
                     observer.onError(error)
                 }else{
-                    let response = AFResponse(statusCode: <#T##Int#>, data: <#T##Data#>, request: <#T##URLRequest?#>, response: <#T##URLResponse?#>)
+                    guard let originData = urlRes as? HTTPURLResponse else{
+                        let errorInfo = ErrorObject().makeError(title: "", description: "Wrong URLResponse object")
+                        observer.onError(errorInfo)
+                        return
+                        
+                    }
+                    let response = AFResponse(statusCode: originData.statusCode, data: data)
                     observer.onNext(response)
                     observer.onCompleted()
                 }

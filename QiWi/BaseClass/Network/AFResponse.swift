@@ -9,13 +9,13 @@
 import Foundation
 public final class AFResponse{
     public let statusCode: Int
-    public let data: Data
+    public let data: Any
     public let request: URLRequest?
     public let response: URLResponse?
 
     
     /// Initialize a new `Response`.
-    public init(statusCode: Int, data: Data, request: URLRequest? = nil, response: URLResponse? = nil) {
+    public init(statusCode: Int, data: Any, request: URLRequest? = nil, response: URLResponse? = nil) {
         self.statusCode = statusCode
         self.data = data
         self.request = request
@@ -24,7 +24,7 @@ public final class AFResponse{
     
     /// A text description of the `Response`.
     public var description: String {
-        return "Status Code: \(statusCode), Data Length: \(data.count)"
+        return "Status Code: \(statusCode)"
     }
     
     /// A text description of the `Response`. Suitable for debugging.

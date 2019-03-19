@@ -14,11 +14,11 @@ final class QWNetwork<T: Decodable>:NSObject {
     private var scheduler: ConcurrentDispatchQueueScheduler
     
     
-    private var _logic:HLBaseLogic?
-    private var logic:HLBaseLogic{
+    private var _logic:RxAFNetworkProvider?
+    private var logic:RxAFNetworkProvider{
         get{
             if(_logic == nil){
-                _logic = HLBaseLogic(operationManagerObj: self.operationManager)
+                _logic = RxAFNetworkProvider(operationManagerObj: self.operationManager)
             }
             return _logic!
         }
@@ -31,17 +31,19 @@ final class QWNetwork<T: Decodable>:NSObject {
     }
     
     func getItem(_ path: String, itemId: String) -> Observable<T> {
-        let absolutePath = "\(endPoint)/\(path)/\(itemId)"
+        let reqPath = "\(endPoint)/\(path)/\(itemId)"
+        let params = NSDictionary()
+        return self.logic.rxRequest(url: reqPath, reqParams: params).
 //        
 //        let param = self.logic.requestWithUrl(url: absolutePath, reqParams: nil) { (<#Any?#>, <#Error?#>) in
 //            <#code#>
 //        }
-//        return RxAlamofire
-//            .data(.get, absolutePath)
-//            .debug()
-//            .observeOn(scheduler)
-//            .map({ data -> T in
-//                return try JSONDecoder().decode(T.self, from: data)
-//            })
+        return RxAlamofire
+            .data(.get, absolutePath)
+            .debug()
+            .observeOn(scheduler)
+            .map({ data -> T in
+                return try JSONDecoder().decode(T.self, from: data)
+            })
     }
 }
