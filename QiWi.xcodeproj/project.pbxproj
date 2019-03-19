@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1804E5B322409BAA00579EE3 /* ErrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804E5B222409BAA00579EE3 /* ErrorObject.swift */; };
 		18240677223259AB00DF7289 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18240676223259AB00DF7289 /* AppDelegate.m */; };
 		1824067A223259AB00DF7289 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18240679223259AB00DF7289 /* ViewController.m */; };
 		1824067D223259AB00DF7289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1824067B223259AB00DF7289 /* Main.storyboard */; };
@@ -147,6 +148,7 @@
 
 /* Begin PBXFileReference section */
 		0B6FEEE7562E940478A8F536 /* Pods_QiWi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiWi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1804E5B222409BAA00579EE3 /* ErrorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorObject.swift; sourceTree = "<group>"; };
 		18240672223259AB00DF7289 /* QiWi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiWi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18240675223259AB00DF7289 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18240676223259AB00DF7289 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -344,6 +346,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1804E5B122409B9600579EE3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1804E5B222409BAA00579EE3 /* ErrorObject.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		18240669223259AB00DF7289 = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +419,7 @@
 		182406A722325C9B00DF7289 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				1804E5B122409B9600579EE3 /* Error */,
 				182406A822325C9B00DF7289 /* Extension */,
 				182406C322325C9B00DF7289 /* Config */,
 				182406C722325C9B00DF7289 /* Location */,
@@ -1129,6 +1140,7 @@
 				1824075D22325C9B00DF7289 /* NSObject+Toast.swift in Sources */,
 				182407A422325C9B00DF7289 /* HLPushPullFooter.m in Sources */,
 				1824078A22325C9B00DF7289 /* MapApi.swift in Sources */,
+				1804E5B322409BAA00579EE3 /* ErrorObject.swift in Sources */,
 				1824077522325C9B00DF7289 /* CountDownTimer.swift in Sources */,
 				1824075922325C9B00DF7289 /* UIViewController+HL.swift in Sources */,
 				1824079E22325C9B00DF7289 /* HLPush.swift in Sources */,
