@@ -382,7 +382,9 @@
 			isa = PBXGroup;
 			children = (
 				182406A722325C9B00DF7289 /* BaseClass */,
-				182407BE2232600F00DF7289 /* Module */,
+				189B7DF32242449400D7F1D9 /* Domain */,
+				189B7DF4224244DE00D7F1D9 /* Platform */,
+				182407BE2232600F00DF7289 /* Application */,
 				18240675223259AB00DF7289 /* AppDelegate.h */,
 				18240676223259AB00DF7289 /* AppDelegate.m */,
 				18240678223259AB00DF7289 /* ViewController.h */,
@@ -456,7 +458,6 @@
 				182406C022325C9B00DF7289 /* NSDate+Utilities.h */,
 				182406B322325C9B00DF7289 /* NSString+QRCode.swift */,
 				182406B422325C9B00DF7289 /* NSObject+Toast.swift */,
-				182406B522325C9B00DF7289 /* UIColor+HL.swift */,
 				182406B622325C9B00DF7289 /* UIColor+Gradient.swift */,
 				182406B722325C9B00DF7289 /* Double+HL.swift */,
 				182406B822325C9B00DF7289 /* NSObject+swizzle.h */,
@@ -496,6 +497,7 @@
 		182406CB22325C9B00DF7289 /* Color */ = {
 			isa = PBXGroup;
 			children = (
+				182406B522325C9B00DF7289 /* UIColor+HL.swift */,
 				182406CC22325C9B00DF7289 /* HLColor.m */,
 				182406CD22325C9B00DF7289 /* HLColor.h */,
 			);
@@ -790,17 +792,19 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		182407BE2232600F00DF7289 /* Module */ = {
+		182407BE2232600F00DF7289 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				189B7DED2242415300D7F1D9 /* Products */,
 				182407BF2232602000DF7289 /* User */,
 			);
-			path = Module;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		182407BF2232602000DF7289 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				189B7DEC2242414500D7F1D9 /* UserCase */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -816,6 +820,74 @@
 				182407C72232731F00DF7289 /* DistanceMatrixVO.m */,
 			);
 			path = GMSModel;
+			sourceTree = "<group>";
+		};
+		189B7DEC2242414500D7F1D9 /* UserCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserCase;
+			sourceTree = "<group>";
+		};
+		189B7DED2242415300D7F1D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				189B7DEE2242416700D7F1D9 /* Category */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		189B7DEE2242416700D7F1D9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				189B7DF22242419E00D7F1D9 /* View */,
+				189B7DF12242419600D7F1D9 /* ViewModel */,
+				189B7DF02242418800D7F1D9 /* Model */,
+				189B7DEF2242416F00D7F1D9 /* CategoryCases */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		189B7DEF2242416F00D7F1D9 /* CategoryCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoryCases;
+			sourceTree = "<group>";
+		};
+		189B7DF02242418800D7F1D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		189B7DF12242419600D7F1D9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		189B7DF22242419E00D7F1D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		189B7DF32242449400D7F1D9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		189B7DF4224244DE00D7F1D9 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Platform;
 			sourceTree = "<group>";
 		};
 		18EB5D75223F788D00208E3F /* RXNetwork */ = {
