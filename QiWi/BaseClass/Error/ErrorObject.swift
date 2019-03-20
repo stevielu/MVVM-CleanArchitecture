@@ -78,31 +78,19 @@ class ErrorInfo: NSError,MyError {
 class LocalError:NSObject,Error {
     
     public var handle:ErrorAction?
-    private var info:ErrorInfo!
+    private var info:ErrorInfo
     
-    init(title:String?,descriptionInfo:String,code:LocalErrorType? = nil,errorAction:ErrorAction? = nil) {
+    init(errorInfo:ErrorInfo,errorAction:ErrorAction? = nil) {
+        self.info = errorInfo
         super.init()
-        let errorType = code
-        self.erroInfoInit(title: title, descriptionInfo: descriptionInfo, code: errorType, errorAction: errorAction)
-    }
-    
-    init(title:String? = "", descriptionInfo:String,errorAction:ErrorAction? = nil) {
-        super.init()
-        self.erroInfoInit(title: title, descriptionInfo: descriptionInfo, code: nil, errorAction: errorAction)
+        
+        //Handle injection
+        self.handle = errorAction
+        self.handle?.doErrorHandle(usrInfo: self.info)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func erroInfoInit(title:String?,descriptionInfo:String,code:LocalErrorType? = nil,errorAction:ErrorAction? = nil){
-        //Info setup
-        let errorTitle = title
-        self.info = ErrorInfo(title: errorTitle, descriptionInfo: descriptionInfo, code: code ?? .LocalError)
-        
-        //Handle injection
-        self.handle = errorAction
-        self.handle?.doErrorHandle(usrInfo: self.info!)
     }
 }
 
@@ -120,7 +108,9 @@ class ErrorObject: NSObject {
             errorHandle = handle!
         }
         
-        return LocalError(title: title, descriptionInfo: description, errorAction: errorHandle)
+        //Error Content
+        let info = ErrorInfo(title: title, descriptionInfo: description, code:.LocalError)
+        return LocalError(errorInfo: info, errorAction: errorHandle)
     }
     
     
