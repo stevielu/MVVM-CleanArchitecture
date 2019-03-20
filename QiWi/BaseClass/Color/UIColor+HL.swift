@@ -31,7 +31,7 @@ extension UIColor {
     static let cellBlack = #colorLiteral(red: 0.2, green: 0.2274509804, blue: 0.3647058824, alpha: 0.1)
     static let bottomorder = #colorLiteral(red: 0.1137254902, green: 0.1490196078, blue: 0.2431372549, alpha: 1)
     static let placeHolder = #colorLiteral(red: 0.3254901961, green: 0.3529411765, blue: 0.4352941176, alpha: 1)
-    //ticket
+
     static let qrcodeBlue = #colorLiteral(red: 0.3843137255, green: 0.4156862745, blue: 0.5607843137, alpha: 1)
     //Route
     static let goldenMarker = #colorLiteral(red: 1, green: 0.7137254902, blue: 0.01176470588, alpha: 1)
@@ -40,7 +40,7 @@ extension UIColor {
     static let routeLightBlue = #colorLiteral(red: 0.1490196078, green: 0.568627451, blue: 0.9803921569, alpha: 1)
     //snipet
     static let snipetBG = #colorLiteral(red: 0.007843137255, green: 0.7647058824, blue: 0.6901960784, alpha: 1)
-    static let routeColors:[UIColor] = {
+    static let colors:[UIColor] = {
         return [#colorLiteral(red: 0.9647058824, green: 0.03137254902, blue: 0.3490196078, alpha: 1),#colorLiteral(red: 0.04705882353, green: 0.6352941176, blue: 0.8274509804, alpha: 1),#colorLiteral(red: 0.4823529412, green: 0.8, blue: 0.07450980392, alpha: 1),#colorLiteral(red: 0.9137254902, green: 0.6666666667, blue: 0.07450980392, alpha: 1),#colorLiteral(red: 1, green: 0.2705882353, blue: 0, alpha: 1),#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1),#colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1),#colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1),#colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1),#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1),#colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1),#colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1),#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.5212053061, blue: 1, alpha: 1)]
     }()
     
