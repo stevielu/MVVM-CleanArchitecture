@@ -17,6 +17,7 @@
 #import "NSObject+category.h"
 #import "NSDictionary+router.h"
 #import "HLValueObject.h"
+#import "PageVO.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <BlocksKit/BlocksKit+UIKit.h>
 

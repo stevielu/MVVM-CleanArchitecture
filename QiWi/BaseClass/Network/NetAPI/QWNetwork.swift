@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-final class QWNetwork<T: Decodable>:NSObject {
+final class QWNetwork<T: HLValueObject>:NSObject {
     private var endPoint: String
     private var scheduler: ConcurrentDispatchQueueScheduler
     
@@ -30,20 +30,53 @@ final class QWNetwork<T: Decodable>:NSObject {
         
     }
     
-    func getItem(_ path: String, itemId: String) -> Observable<T> {
+    func getItem(_ path: String, itemId: String) -> Observable<T?> {
         let reqPath = "\(endPoint)/\(path)/\(itemId)"
         let params = NSDictionary()
-        return self.logic.rxRequest(url: reqPath, reqParams: params).
-//        
-//        let param = self.logic.requestWithUrl(url: absolutePath, reqParams: nil) { (<#Any?#>, <#Error?#>) in
-//            <#code#>
-//        }
-        return RxAlamofire
-            .data(.get, absolutePath)
-            .debug()
-            .observeOn(scheduler)
-            .map({ data -> T in
-                return try JSONDecoder().decode(T.self, from: data)
-            })
+        
+        return self.logic.rxRequest(url: reqPath, reqParams: params).map({ response in
+            let data = response.data as? [String: AnyObject]
+            return T.vo(withDict: data)
+        })
+    }
+    
+    func getItems(_ path: String) -> Observable<[T]?> {
+        let reqPath = "\(endPoint)/\(path)"
+        let params = NSDictionary()
+        
+        return self.logic.rxRequest(url: reqPath, reqParams: params).map({ response in
+            let data = response.data as? [String: AnyObject]
+            if let list = T.vo(withDict: data) as? PageVO{
+                return list.results as? [T]
+            }
+            return nil
+        })
+    }
+    
+    func postItem(_ path: String, parameters: NSDictionary) -> Observable<T?> {
+        let reqPath = "\(endPoint)/\(path)"
+        return self.logic.rxRequest(url: reqPath, reqParams: parameters, method: .post).map({ response in
+            let data = response.data as? [String: AnyObject]
+            return T.vo(withDict: data)
+        })
+    }
+    
+    func updateItem(_ path: String, itemId: String, parameters: NSDictionary) -> Observable<T?> {
+        let reqPath = "\(endPoint)/\(path)/\(itemId)"
+        
+        return self.logic.rxRequest(url: reqPath, reqParams: parameters, method: .put).map({ response in
+            let data = response.data as? [String: AnyObject]
+            return T.vo(withDict: data)
+        })
+    }
+    
+    func deleteItem(_ path: String, itemId: String) -> Observable<T?> {
+        let reqPath = "\(endPoint)/\(path)/\(itemId)"
+        let params = NSDictionary()
+        
+        return self.logic.rxRequest(url: reqPath, reqParams: params, method: .delete).map({ response in
+            let data = response.data as? [String: AnyObject]
+            return T.vo(withDict: data)
+        })
     }
 }

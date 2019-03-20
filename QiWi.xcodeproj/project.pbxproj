@@ -759,10 +759,10 @@
 		1824073722325C9B00DF7289 /* JsonModel */ = {
 			isa = PBXGroup;
 			children = (
-				1824073822325C9B00DF7289 /* PageVO.m */,
-				1824073922325C9B00DF7289 /* HLValueObject.m */,
 				1824073A22325C9B00DF7289 /* PageVO.h */,
+				1824073822325C9B00DF7289 /* PageVO.m */,
 				1824073B22325C9B00DF7289 /* HLValueObject.h */,
+				1824073922325C9B00DF7289 /* HLValueObject.m */,
 			);
 			path = JsonModel;
 			sourceTree = "<group>";

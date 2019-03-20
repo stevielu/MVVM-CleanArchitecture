@@ -15,7 +15,7 @@ class RxAFNetworkProvider:HLBaseLogic{
         super.init(operationManagerObj: operationManagerObj)
     }
     
-    func rxRequest(url:String,reqParams:NSDictionary) -> Observable<AFResponse>{
+    func rxRequest(url:String,reqParams:NSDictionary,method:HLRequestType? = .get) -> Observable<AFResponse>{
         return Observable.create{ observer in
             let params = self.requestWithUrl(url: url, reqParams: reqParams, completeBlock: { (data, anError, urlRes) in
                 if let error = anError as NSError? {
@@ -32,6 +32,8 @@ class RxAFNetworkProvider:HLBaseLogic{
                     observer.onCompleted()
                 }
             })
+            
+            params.requestType = method ?? .get
             self.operationManager.request(with: params)
             
             return Disposables.create {
