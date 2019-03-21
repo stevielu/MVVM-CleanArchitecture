@@ -124,6 +124,9 @@
 		182407CE2232732000DF7289 /* DistanceElementVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 182407CB2232731F00DF7289 /* DistanceElementVO.m */; };
 		182407D2223274C900DF7289 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182407D1223274C900DF7289 /* HomeVC.swift */; };
 		1829105E223CD34C00A72333 /* QWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829105D223CD34C00A72333 /* QWNetwork.swift */; };
+		1891DBAD2243916E00B53507 /* CategoryCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891DBAC2243916E00B53507 /* CategoryCaseProvider.swift */; };
+		1891DBB2224393A600B53507 /* ProductCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1891DBB1224393A600B53507 /* ProductCategory.m */; };
+		1891DBB5224397D100B53507 /* CategoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1891DBB4224397D100B53507 /* CategoryList.m */; };
 		18EB5D77223F78B300208E3F /* RxAFNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5D76223F78B300208E3F /* RxAFNetworkProvider.swift */; };
 		18EB5D79223F7D5E00208E3F /* AFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5D78223F7D5E00208E3F /* AFResponse.swift */; };
 		8A0CC7DCFB1B9C61207CD122 /* Pods_QiWi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6FEEE7562E940478A8F536 /* Pods_QiWi.framework */; };
@@ -314,6 +317,11 @@
 		182407CB2232731F00DF7289 /* DistanceElementVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceElementVO.m; sourceTree = "<group>"; };
 		182407D1223274C900DF7289 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1829105D223CD34C00A72333 /* QWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QWNetwork.swift; sourceTree = "<group>"; };
+		1891DBAC2243916E00B53507 /* CategoryCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCaseProvider.swift; sourceTree = "<group>"; };
+		1891DBB0224393A600B53507 /* ProductCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
+		1891DBB1224393A600B53507 /* ProductCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductCategory.m; sourceTree = "<group>"; };
+		1891DBB3224397D100B53507 /* CategoryList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryList.h; sourceTree = "<group>"; };
+		1891DBB4224397D100B53507 /* CategoryList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryList.m; sourceTree = "<group>"; };
 		18EB5D76223F78B300208E3F /* RxAFNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAFNetworkProvider.swift; sourceTree = "<group>"; };
 		18EB5D78223F7D5E00208E3F /* AFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFResponse.swift; sourceTree = "<group>"; };
 		2874093D71853EDB68854DE4 /* Pods-QiWi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiWi.release.xcconfig"; path = "Pods/Target Support Files/Pods-QiWi/Pods-QiWi.release.xcconfig"; sourceTree = "<group>"; };
@@ -804,7 +812,6 @@
 		182407BF2232602000DF7289 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				189B7DEC2242414500D7F1D9 /* UserCase */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -822,11 +829,28 @@
 			path = GMSModel;
 			sourceTree = "<group>";
 		};
-		189B7DEC2242414500D7F1D9 /* UserCase */ = {
+		1891DBA822438F3A00B53507 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				1891DBAA22438F5000B53507 /* User */,
+				1891DBA922438F4200B53507 /* Product */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		1891DBA922438F4200B53507 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				189B7DEF2242416F00D7F1D9 /* CategoryCases */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		1891DBAA22438F5000B53507 /* User */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = UserCase;
+			path = User;
 			sourceTree = "<group>";
 		};
 		189B7DED2242415300D7F1D9 /* Products */ = {
@@ -842,8 +866,6 @@
 			children = (
 				189B7DF22242419E00D7F1D9 /* View */,
 				189B7DF12242419600D7F1D9 /* ViewModel */,
-				189B7DF02242418800D7F1D9 /* Model */,
-				189B7DEF2242416F00D7F1D9 /* CategoryCases */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -851,6 +873,7 @@
 		189B7DEF2242416F00D7F1D9 /* CategoryCases */ = {
 			isa = PBXGroup;
 			children = (
+				1891DBAC2243916E00B53507 /* CategoryCaseProvider.swift */,
 			);
 			path = CategoryCases;
 			sourceTree = "<group>";
@@ -858,6 +881,10 @@
 		189B7DF02242418800D7F1D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1891DBB0224393A600B53507 /* ProductCategory.h */,
+				1891DBB1224393A600B53507 /* ProductCategory.m */,
+				1891DBB3224397D100B53507 /* CategoryList.h */,
+				1891DBB4224397D100B53507 /* CategoryList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -879,6 +906,8 @@
 		189B7DF32242449400D7F1D9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1891DBA822438F3A00B53507 /* Module */,
+				189B7DF02242418800D7F1D9 /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1184,6 +1213,7 @@
 				182407B922325C9B00DF7289 /* NSDictionary+router.m in Sources */,
 				1824075522325C9B00DF7289 /* NSObject+swizzle.m in Sources */,
 				1824079F22325C9B00DF7289 /* HLBaseVC.swift in Sources */,
+				1891DBB5224397D100B53507 /* CategoryList.m in Sources */,
 				1824079522325C9B00DF7289 /* UITextField+HLValidator.m in Sources */,
 				1824077922325C9B00DF7289 /* SnackBarProtocol.swift in Sources */,
 				1824078722325C9B00DF7289 /* GMSMapMarker.swift in Sources */,
@@ -1193,6 +1223,7 @@
 				1824076422325C9B00DF7289 /* UILabel+HL.swift in Sources */,
 				1829105E223CD34C00A72333 /* QWNetwork.swift in Sources */,
 				182407AA22325C9B00DF7289 /* KeychainItemWrapper.m in Sources */,
+				1891DBAD2243916E00B53507 /* CategoryCaseProvider.swift in Sources */,
 				1824076D22325C9B00DF7289 /* Float+degrees.swift in Sources */,
 				1824077822325C9B00DF7289 /* HLWeakObjectDeathNotifier.m in Sources */,
 				182407A022325C9B00DF7289 /* HLBaseNC.swift in Sources */,
@@ -1203,6 +1234,7 @@
 				1824078622325C9B00DF7289 /* GMSManager.swift in Sources */,
 				182407B722325C9B00DF7289 /* HLRouter.m in Sources */,
 				182407A922325C9B00DF7289 /* BaseRequestObject.swift in Sources */,
+				1891DBB2224393A600B53507 /* ProductCategory.m in Sources */,
 				182407A722325C9B00DF7289 /* HLPickerView.swift in Sources */,
 				182407B622325C9B00DF7289 /* UIViewController+create 2.m in Sources */,
 				182407D2223274C900DF7289 /* HomeVC.swift in Sources */,
