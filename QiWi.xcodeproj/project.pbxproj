@@ -124,6 +124,9 @@
 		182407CE2232732000DF7289 /* DistanceElementVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 182407CB2232731F00DF7289 /* DistanceElementVO.m */; };
 		182407D2223274C900DF7289 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182407D1223274C900DF7289 /* HomeVC.swift */; };
 		1829105E223CD34C00A72333 /* QWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829105D223CD34C00A72333 /* QWNetwork.swift */; };
+		185F98E72244C4530033511E /* NetworkMiddlewareCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F98E62244C4530033511E /* NetworkMiddlewareCase.swift */; };
+		185F98E92244D4690033511E /* AFResponse+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F98E82244D4690033511E /* AFResponse+Observer.swift */; };
+		185F98ED2244D60E0033511E /* BaseMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F98EC2244D60E0033511E /* BaseMiddleware.swift */; };
 		1891DBAD2243916E00B53507 /* CategoryCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891DBAC2243916E00B53507 /* CategoryCaseProvider.swift */; };
 		1891DBB2224393A600B53507 /* ProductCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1891DBB1224393A600B53507 /* ProductCategory.m */; };
 		1891DBB5224397D100B53507 /* CategoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1891DBB4224397D100B53507 /* CategoryList.m */; };
@@ -317,6 +320,9 @@
 		182407CB2232731F00DF7289 /* DistanceElementVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceElementVO.m; sourceTree = "<group>"; };
 		182407D1223274C900DF7289 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1829105D223CD34C00A72333 /* QWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QWNetwork.swift; sourceTree = "<group>"; };
+		185F98E62244C4530033511E /* NetworkMiddlewareCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMiddlewareCase.swift; sourceTree = "<group>"; };
+		185F98E82244D4690033511E /* AFResponse+Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AFResponse+Observer.swift"; sourceTree = "<group>"; };
+		185F98EC2244D60E0033511E /* BaseMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMiddleware.swift; sourceTree = "<group>"; };
 		1891DBAC2243916E00B53507 /* CategoryCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCaseProvider.swift; sourceTree = "<group>"; };
 		1891DBB0224393A600B53507 /* ProductCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
 		1891DBB1224393A600B53507 /* ProductCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductCategory.m; sourceTree = "<group>"; };
@@ -528,6 +534,7 @@
 				182406D822325C9B00DF7289 /* URLConfig.swift */,
 				182406DB22325C9B00DF7289 /* HLHttpConfig.m */,
 				18EB5D78223F7D5E00208E3F /* AFResponse.swift */,
+				185F98E82244D4690033511E /* AFResponse+Observer.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -537,7 +544,6 @@
 			children = (
 				182406D422325C9B00DF7289 /* HLNetApi.m */,
 				182406D522325C9B00DF7289 /* HLNetApi.h */,
-				1829105D223CD34C00A72333 /* QWNetwork.swift */,
 			);
 			path = NetAPI;
 			sourceTree = "<group>";
@@ -923,6 +929,9 @@
 			isa = PBXGroup;
 			children = (
 				18EB5D76223F78B300208E3F /* RxAFNetworkProvider.swift */,
+				1829105D223CD34C00A72333 /* QWNetwork.swift */,
+				185F98E62244C4530033511E /* NetworkMiddlewareCase.swift */,
+				185F98EC2244D60E0033511E /* BaseMiddleware.swift */,
 			);
 			path = RXNetwork;
 			sourceTree = "<group>";
@@ -1208,6 +1217,7 @@
 				182407A822325C9B00DF7289 /* HLGlobalValue.m in Sources */,
 				1824079622325C9B00DF7289 /* HLHelper.m in Sources */,
 				1824078922325C9B00DF7289 /* GMSMovingAmi.swift in Sources */,
+				185F98E72244C4530033511E /* NetworkMiddlewareCase.swift in Sources */,
 				1824076622325C9B00DF7289 /* CircleView.swift in Sources */,
 				182407A622325C9B00DF7289 /* ErrorInfoLabel.swift in Sources */,
 				182407B922325C9B00DF7289 /* NSDictionary+router.m in Sources */,
@@ -1265,6 +1275,7 @@
 				1824077A22325C9B00DF7289 /* HLPush.m in Sources */,
 				1824076A22325C9B00DF7289 /* HLConfigFile.m in Sources */,
 				1824076222325C9B00DF7289 /* UIImage+HL.swift in Sources */,
+				185F98ED2244D60E0033511E /* BaseMiddleware.swift in Sources */,
 				1824075222325C9B00DF7289 /* UIView+HL.swift in Sources */,
 				182407CE2232732000DF7289 /* DistanceElementVO.m in Sources */,
 				1824078F22325C9B00DF7289 /* PolyLine.swift in Sources */,
@@ -1318,6 +1329,7 @@
 				182407B222325C9B00DF7289 /* BaseViewPresenter.swift in Sources */,
 				182407AE22325C9B00DF7289 /* HLBarItemView.m in Sources */,
 				1824079A22325C9B00DF7289 /* HLBasePageVC.swift in Sources */,
+				185F98E92244D4690033511E /* AFResponse+Observer.swift in Sources */,
 				1824076B22325C9B00DF7289 /* ConfigLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1424,7 +1436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1477,7 +1489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -37,7 +37,7 @@ class RxAFNetworkProvider:HLBaseLogic{
             self.operationManager.request(with: params)
             
             return Disposables.create {
-                self.operationManager.cancelAllOperations()
+//                self.operationManager.cancelAllOperations()
             }
         }
     }

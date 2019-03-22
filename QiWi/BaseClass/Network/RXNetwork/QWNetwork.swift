@@ -12,7 +12,7 @@ import RxSwift
 final class QWNetwork<T: HLValueObject>:NSObject {
     private var endPoint: String
     private var scheduler: ConcurrentDispatchQueueScheduler
-    
+    private var middleware:ResponseMiddleware
     
     private var _logic:RxAFNetworkProvider?
     private var logic:RxAFNetworkProvider{
@@ -24,8 +24,9 @@ final class QWNetwork<T: HLValueObject>:NSObject {
         }
     }
     
-    init(_ endPoint: String) {
+    init(_ endPoint: String, middleware:ResponseMiddleware? = nil) {
         self.endPoint = endPoint
+        self.middleware = middleware ?? BaseNetworkMiddleware()
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
         
     }
@@ -34,7 +35,7 @@ final class QWNetwork<T: HLValueObject>:NSObject {
         let reqPath = "\(endPoint)/\(path)/\(itemId)"
         let params = NSDictionary()
         
-        return self.logic.rxRequest(url: reqPath, reqParams: params).map({ response in
+        return self.logic.rxRequest(url: reqPath, reqParams: params).observeOn(scheduler).map({ response in
             let data = response.data as? [String: AnyObject]
             return T.vo(withDict: data)
         })
