@@ -101,11 +101,11 @@ class HLBaseBottomSheetVC: HLBaseVC {
         
     }
 
-    public func inScrollingHandle(top:CGFloat){
+    @objc  public func inScrollingHandle(top:CGFloat){
         
     }
     
-    func panGesture(_ recognizer: UIPanGestureRecognizer) {
+    @objc public func panGesture(_ recognizer: UIPanGestureRecognizer) {
         self.view.addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.new, context: nil)
         
         let translation = recognizer.translation(in: self.view)
@@ -136,8 +136,8 @@ class HLBaseBottomSheetVC: HLBaseVC {
         }
     }
     
-    var StatusBarChanged = false
-    func statusBarWillChanged(){
+    @objc public var StatusBarChanged = false
+    @objc public func statusBarWillChanged(){
         let newheight = UIApplication.shared.statusBarFrame.size.height
         if(newheight >= 40){
             StatusBarChanged = true
@@ -163,11 +163,11 @@ class HLBaseBottomSheetVC: HLBaseVC {
         }, completion: completionHandle)
     }
     
-    public func sheetViewScrolling(withDuration duration:Double,direction:ScrollDirection){
+   public func sheetViewScrolling(withDuration duration:Double,direction:ScrollDirection){
         self.sheetViewScrolling(withDuration: duration, direction: direction, completionHandle: nil)
     }
     
-    func scrollUp(){
+    @objc public func scrollUp(){
         if (self.delegate?.willScrollup(sheetView: self) == false){
             return
         }
@@ -176,11 +176,11 @@ class HLBaseBottomSheetVC: HLBaseVC {
         viewDidScrollUp()
     }
     
-    public func viewDidScrollUp(){
+    @objc public func viewDidScrollUp(){
         
     }
     
-    func scrollDown(){
+    @objc public func scrollDown(){
         if (self.delegate?.willScrolldown(sheetView: self) == false){
             return
         }
@@ -188,11 +188,11 @@ class HLBaseBottomSheetVC: HLBaseVC {
         viewDidScrollDown()
     }
     
-    public func viewDidScrollDown(){
+    @objc public func viewDidScrollDown(){
         
     }
     
-    public func setupLayout(){
+    @objc public func setupLayout(){
         view.backgroundColor = UIColor.clear
         self.holdView = UIView().then({ (view) in
             self.view.addSubview(view)

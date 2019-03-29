@@ -58,7 +58,7 @@ class HLBaseVC: UIViewController,viewTargetDelegate {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
    
-    func showLoadingView(){
+    @objc func showLoadingView(){
         if(loadingView == nil && self.needLoading == true){
             loadingView = UIView()
             loadingView.frame = self.view.frame
@@ -68,17 +68,17 @@ class HLBaseVC: UIViewController,viewTargetDelegate {
         }
     }
     
-    func reload(){
+    @objc func reload(){
         for subview in view.subviews {
             subview.removeFromSuperview()
         }
     }
     
-    func appDidEnterForgeground(){
+    @objc func appDidEnterForgeground(){
         
     }
     
-    func appDidEnterBackground(){
+    @objc func appDidEnterBackground(){
         
     }
 }
@@ -240,36 +240,36 @@ protocol viewTargetDelegate:class {
 
 //Notification Event
 extension HLBaseVC{
-    func addRemoteAlertPushObserver(){
+    @objc func addRemoteAlertPushObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(remoteAlert(aNotification:)), name: NSNotification.Name(rawValue: SHOW_REMOTE_ALERT), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(remoteAlertAction(aNotification:)), name: NSNotification.Name(rawValue: SHOW_REMOTE_ALERT_REMOTE_ACTION), object: nil)
     }
     
-    func removeRemoteAlertPushObserver(){
+    @objc func removeRemoteAlertPushObserver(){
          NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: SHOW_REMOTE_ALERT), object: self)
          NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: SHOW_REMOTE_ALERT_REMOTE_ACTION), object: self)
     }
     
-    func addKeyboardObserver(){
+    @objc func addKeyboardObserver(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(KeyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func removeKeyboardObserve(){
+    @objc func removeKeyboardObserve(){
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func keyboardShow(aNotification:NSNotification){
+    @objc func keyboardShow(aNotification:NSNotification){
         
     }
     
-    func KeyboardHide(aNotification:NSNotification){
+    @objc func KeyboardHide(aNotification:NSNotification){
         
     }
     
-    func hideKeyboardWhenTappedAround() {
+    @objc func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
@@ -279,14 +279,14 @@ extension HLBaseVC{
         view.endEditing(true)
     }
     
-    func remoteAlertAction(aNotification:NSNotification){
+    @objc func remoteAlertAction(aNotification:NSNotification){
         if let alert = aNotification.userInfo as NSDictionary?{
             let handle = RemoteNotificationAction.sharedInstance
             handle.event?.handleRemoteNotif(aNotification:alert)
         }
     }
     
-    func remoteAlert(aNotification:NSNotification){
+    @objc func remoteAlert(aNotification:NSNotification){
 //        if let alert = aNotification.userInfo as NSDictionary?{
 //            let snack = snackBarOutLet()
 //            snack.snackMessageView = MessageView.viewFromNib(layout: .messageView)

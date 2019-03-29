@@ -53,7 +53,7 @@ target 'QiWi' do
   #pod 'DZNEmptyDataSet'
   
   #syntactic
- 
+  pod 'Then'
   
   #map sdk                                                                      #ThirdParty
   pod 'GoogleMaps'

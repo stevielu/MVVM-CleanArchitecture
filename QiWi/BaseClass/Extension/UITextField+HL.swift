@@ -35,7 +35,7 @@ extension UITextField{
     
     func setDefaultTextField(placeholder:String){
         self.textColor = UIColor.white
-        self.attributedPlaceholder = NSAttributedString(string: placeholder,attributes:[NSFontAttributeName : UIFont.subtitleFont,NSForegroundColorAttributeName:UIColor.placeHolder])
+        self.attributedPlaceholder = NSAttributedString(string: placeholder,attributes:[NSAttributedStringKey.font : UIFont.subtitleFont,NSAttributedStringKey.foregroundColor:UIColor.placeHolder])
     }
     
     func addLeftIndicator(color:UIColor){
@@ -93,7 +93,7 @@ extension UITextField{
         self.rightViewMode = .whileEditing
     }
     
-    func textClear(sender : AnyObject) {
+    @objc func textClear(sender : AnyObject) {
         self.text = ""
     }
    
@@ -107,7 +107,7 @@ extension UITextField{
         self.rightViewMode = .whileEditing
     }
     
-    func textToggle(sender : UIButton) {
+    @objc func textToggle(sender : UIButton) {
         self.isSecureTextEntry = !self.isSecureTextEntry
         sender.setImage(UIImage(named: (self.isSecureTextEntry == true) ? "sec_hide":"sec_show"), for: .normal)
         if let textRange = self.textRange(from: self.beginningOfDocument, to: self.endOfDocument) {//trailing the white space

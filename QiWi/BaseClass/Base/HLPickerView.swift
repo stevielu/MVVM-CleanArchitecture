@@ -20,7 +20,7 @@ struct PickerViewComponets{
 
 class BasePickerView: NSObject,UIPickerViewDelegate,UIPickerViewDataSource {
     var components:PickerViewComponets!
-    dynamic var returnValue:String?
+    @objc dynamic var returnValue:String?
     
     convenience init(contents:PickerViewComponets) {
         self.init()

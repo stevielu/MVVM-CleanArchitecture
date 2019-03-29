@@ -31,23 +31,23 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    func update() {
+    @objc func update() {
         
     }
     
-    func getData() {
+    @objc func getData() {
         
     }
     
-    func getMoreData() {
+    @objc func getMoreData() {
         
     }
     
-    func cancelAllOperations() {
+    @objc func cancelAllOperations() {
         self.operationManager.cancelAllOperations();
     }
     
-    func repeateClickTabBarItem(_ count: Int) {
+    @objc func repeateClickTabBarItem(_ count: Int) {
         
     }
     
@@ -60,15 +60,15 @@ extension UIViewController {
         
     }
     
-    func onTap(_ sender: AnyObject?) {
+    @objc func onTap(_ sender: AnyObject?) {
         endTextEditing()
     }
     
-    func resize(_ size: CGSize) {
+    @objc func resize(_ size: CGSize) {
         
     }
     
-    func didResize(_ size: CGSize) {
+    @objc func didResize(_ size: CGSize) {
         
     }
 }

@@ -11,7 +11,7 @@ extension NSMutableAttributedString{
     func setColorForText(_ textToFind: String, with color: UIColor) {
         let range = self.mutableString.range(of: textToFind, options: .caseInsensitive)
         if range.location != NSNotFound {
-            addAttribute(NSForegroundColorAttributeName, value: color, range: range)
+            addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
         }
     }
 }
@@ -24,9 +24,9 @@ extension UILabel{
         for (index,text) in changeTexts.enumerated(){
             let range = (strNumber).range(of: text)
             if(font == nil){
-                attribute.addAttribute(NSForegroundColorAttributeName, value: color[index] , range: range)
+                attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: color[index] , range: range)
             }else{
-                attribute.addAttributes([NSForegroundColorAttributeName:color[index],NSFontAttributeName:font!], range: range)
+                attribute.addAttributes([NSAttributedStringKey.foregroundColor:color[index],NSAttributedStringKey.font:font!], range: range)
             }
         }
         self.attributedText = attribute

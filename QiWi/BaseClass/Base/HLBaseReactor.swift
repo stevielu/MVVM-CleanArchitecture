@@ -16,10 +16,10 @@ import UIKit
  * Use for bussiness,data logic
  */
 class HLBaseReactor:NSObject {
-    var presentView:viewTargetDelegate?
+    public var presentView:viewTargetDelegate?
     
     
-    func doResponse(data:responseObject){
+    public func doResponse(data:responseObject){
         self.hideViewLoading()
         if(data.code == 200){
             self.doLogicSuccess(ro: data)
@@ -28,20 +28,20 @@ class HLBaseReactor:NSObject {
         }
     }
     
-    func doLogicSuccess(ro:responseObject){
+     public func doLogicSuccess(ro:responseObject){
         
     }
     
-    func doLogicFaild(ro:responseObject){
+    public func doLogicFaild(ro:responseObject){
         
     }
     
     
-    func hideViewLoading(){
+    @objc public func hideViewLoading(){
         self.hideViewLoading(withVC: nil)
     }
     
-    func hideViewLoading(withVC:HLBaseVC?){
+    @objc public func hideViewLoading(withVC:HLBaseVC?){
         if(withVC == nil){
             if(self.presentView?.controllerView.loadingView != nil){
                 self.perform(#selector(removeView), with: nil, afterDelay: 0.5)
@@ -54,23 +54,23 @@ class HLBaseReactor:NSObject {
         
     }
     
-    func removeView(){
+    @objc public func removeView(){
         self.presentView?.controllerView.loadingView.removeFromSuperview()
     }
     
-    func showLoading(){
+    @objc public func showLoading(){
         self.presentView?.controllerView.showLoading()
     }
     
-    func showLoadingWithMsg(message:NSString){
+    @objc public func showLoadingWithMsg(message:NSString){
         self.presentView?.controllerView.showLoadingWithMessage(message: message)
     }
     
-    func showLoadingWithMsgAutoHide(message:NSString){
+    @objc public func showLoadingWithMsgAutoHide(message:NSString){
         self.presentView?.controllerView.showMsgLoading(message: message, hideAfter: HUDAnimationInterval)
     }
     
-    func hideHUDLoading(){
+    @objc public func hideHUDLoading(){
         self.presentView?.controllerView.hideLoading()
         
     }

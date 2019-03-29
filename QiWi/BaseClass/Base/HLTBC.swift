@@ -24,8 +24,8 @@ class HLTBC: UITabBarController,UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let unselectedItem = [NSForegroundColorAttributeName: UIColor.subTitleBlack]
-        let selectedItem = [NSForegroundColorAttributeName: UIColor.white]
+        let unselectedItem = [NSAttributedStringKey.foregroundColor: UIColor.subTitleBlack]
+        let selectedItem = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         let firstSection:UIViewController = {
             let sb = UIStoryboard(name: "Trips", bundle: nil)
