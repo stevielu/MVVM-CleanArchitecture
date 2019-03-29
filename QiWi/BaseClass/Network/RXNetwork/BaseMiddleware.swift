@@ -18,5 +18,12 @@ final class BaseNetworkMiddleware:ResponseMiddleware {
         
     }
     
+    func next(){
+        
+    }
+}
+
+
+extension ObserverType where E == AFResponse{
     
 }

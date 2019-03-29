@@ -21,7 +21,7 @@ enum LocalErrorType:Int{
     case NetworkError
     case MemoryError
     
-    var str:String{
+    var errorDescription:String{
         get{
             switch self {
             case .LocalError:
@@ -38,7 +38,7 @@ enum LocalErrorType:Int{
 ///Normal Local Error Handle
 class DefaultErrorEvent: ErrorAction {
     func doErrorHandle(usrInfo:ErrorInfo) {
-        HLLog("Reason: \(usrInfo.title ?? "nil") \n Error code: \(usrInfo.errorCode.str) \n Description: \(usrInfo.description)")
+        HLLog("Reason: \(usrInfo.title ?? "nil") \n Error code: \(usrInfo.errorCode.errorDescription) \n Description: \(usrInfo.description)")
     }
 }
 

@@ -144,14 +144,14 @@
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
-		<key>QRCode.xcscheme</key>
+		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
-		<key>Result.xcscheme</key>
+		<key>RxAtomic.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -199,13 +199,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>26</integer>
-		</dict>
-		<key>Then.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>28</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

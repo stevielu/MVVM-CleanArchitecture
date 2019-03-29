@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-
+import Moya
 final class QWNetwork<T: HLValueObject>:NSObject {
     private var endPoint: String
     private var scheduler: ConcurrentDispatchQueueScheduler
@@ -34,7 +34,13 @@ final class QWNetwork<T: HLValueObject>:NSObject {
     func getItem(_ path: String, itemId: String) -> Observable<T?> {
         let reqPath = "\(endPoint)/\(path)/\(itemId)"
         let params = NSDictionary()
-        
+        let rxProvicer = self.logic.rxRequest(url: reqPath, reqParams: params)
+        rxProvicer.subscribe{ event in 
+            switch event{
+            case let .success(res): break
+                
+            }
+        }
         return self.logic.rxRequest(url: reqPath, reqParams: params).observeOn(scheduler).map({ response in
             let data = response.data as? [String: AnyObject]
             return T.vo(withDict: data)
@@ -45,7 +51,7 @@ final class QWNetwork<T: HLValueObject>:NSObject {
         let reqPath = "\(endPoint)/\(path)"
         let params = NSDictionary()
         
-        return self.logic.rxRequest(url: reqPath, reqParams: params).map({ response in
+        return self.logic.rxRequest(url: reqPath, reqParams: params).observeOn(scheduler).map({ response in
             let data = response.data as? [String: AnyObject]
             if let list = T.vo(withDict: data) as? PageVO{
                 return list.results as? [T]
@@ -56,7 +62,7 @@ final class QWNetwork<T: HLValueObject>:NSObject {
     
     func postItem(_ path: String, parameters: NSDictionary) -> Observable<T?> {
         let reqPath = "\(endPoint)/\(path)"
-        return self.logic.rxRequest(url: reqPath, reqParams: parameters, method: .post).map({ response in
+        return self.logic.rxRequest(url: reqPath, reqParams: parameters, method: .post).observeOn(scheduler).map({ response in
             let data = response.data as? [String: AnyObject]
             return T.vo(withDict: data)
         })
@@ -65,7 +71,7 @@ final class QWNetwork<T: HLValueObject>:NSObject {
     func updateItem(_ path: String, itemId: String, parameters: NSDictionary) -> Observable<T?> {
         let reqPath = "\(endPoint)/\(path)/\(itemId)"
         
-        return self.logic.rxRequest(url: reqPath, reqParams: parameters, method: .put).map({ response in
+        return self.logic.rxRequest(url: reqPath, reqParams: parameters, method: .put).observeOn(scheduler).map({ response in
             let data = response.data as? [String: AnyObject]
             return T.vo(withDict: data)
         })
@@ -75,7 +81,7 @@ final class QWNetwork<T: HLValueObject>:NSObject {
         let reqPath = "\(endPoint)/\(path)/\(itemId)"
         let params = NSDictionary()
         
-        return self.logic.rxRequest(url: reqPath, reqParams: params, method: .delete).map({ response in
+        return self.logic.rxRequest(url: reqPath, reqParams: params, method: .delete).observeOn(scheduler).map({ response in
             let data = response.data as? [String: AnyObject]
             return T.vo(withDict: data)
         })
